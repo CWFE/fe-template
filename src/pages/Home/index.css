@@ -1,0 +1,10 @@
+.home {
+  width: 100%;
+  height: 30vh;
+  background-color: yellow;
+}
+
+.home img {
+  width: 200px;
+  height: 200px;
+}
