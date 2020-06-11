@@ -21,6 +21,11 @@ const cssRule = {
   use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
   exclude: /node_modules/
 }
+const lessRule = {
+  test: /\.less$/,
+  use: ['less-loader'],
+  exclude: /node_modules/
+}
 const jsRule = {
   test: /\.(js | jsx)$/,
   use: 'babel-loader',
@@ -39,7 +44,7 @@ module.exports = {
     filename: 'static/js/[name].[contenthash:8].js'
   },
   module: {
-    rules: [jsRule, tsRule, cssRule, fileRule]
+    rules: [jsRule, tsRule, cssRule, lessRule, fileRule]
   },
   plugins: [
     new MiniCssExtractPlugin({
