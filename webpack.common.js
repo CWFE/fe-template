@@ -23,7 +23,16 @@ const cssRule = {
 }
 const lessRule = {
   test: /\.less$/,
-  use: ['less-loader'],
+  use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', {
+    loader: 'less-loader',
+    query: {
+      lessOptions: {
+        modifyVars: {
+          "@primary-color": "#0F2149"
+        }
+      }
+    }
+  }],
   exclude: /node_modules/
 }
 const jsRule = {
